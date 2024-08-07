@@ -1,5 +1,5 @@
 - name: insatll db 
-  hsots: db
+  hosts: db
   become: yes
   roles
   - db
