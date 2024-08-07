@@ -1,4 +1,4 @@
-- name: insatll db 
+- name: insatll db
   hosts: db
   become: yes
   roles
