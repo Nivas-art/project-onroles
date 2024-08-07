@@ -1,5 +1,0 @@
-
-- name: restart backend
-  ansible.builtin.service:
-    name: backend
-    state: restarted
