@@ -17,7 +17,7 @@
 
 - name: check db pwd or not
   community.mysql.mysql_info: # gather the mysql info
-    login_user: "{{ login_user }}"
+    login_user: root
     login_password: "{{ login_password }}"
     login_host: "{{ login_host }}"
     filter: version # check the verison 
