@@ -2,6 +2,7 @@
   ansible.builtin.dnf:
     name: mysql-server
     state: latest
+    
 - name: start and enabled
   ansible.builtin.service:
     name: mysqld
