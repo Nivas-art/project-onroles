@@ -67,10 +67,8 @@
     target: /app/schema/backend.sql
     state: import
     name: all
-  notify:
-  - restart backend
-  
-#- name: restart backend
-#  ansible.builtin.service:
- #   name: backend
-  #  state: restarted
+
+- name: restart backend
+  ansible.builtin.service:
+    name: backend
+    state: restarted
