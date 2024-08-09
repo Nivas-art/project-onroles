@@ -16,23 +16,17 @@
   ansible.builtin.user:
     name: expense
 
-- name: create app directory
-  ansible.builtin.file:
-    path: /app
-    state: directory
-
-- name: downlaod file
-  ansible.builtin.get_url:
-    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
-    dest: /tmp/backend.zip
-
-- name: unzip the file
-  ansible.builtin.unarchive:
-    src: /tmp/backend.zip
-    dest: /app
-    remote_src: yes
+- name: run coomon file
+  tags:
+    - deployment
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: common.yaml
+    
 
 - name: npm insatll
+  tags:
+    - deployment
   ansible.builtin.command: npm install
   args:
     chdir: /app
@@ -69,6 +63,8 @@
     name: all
 
 - name: restart backend
+  tags:
+    - deployment
   ansible.builtin.service:
     name: backend
     state: restarted

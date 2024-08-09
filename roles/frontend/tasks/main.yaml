@@ -23,6 +23,8 @@
   ansible.builtin.unarchive:
     src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
     dest: "{{ path }}"
+    tags:
+    - deployement
 
 - name: editthe file
   ansible.builtin.template:
@@ -30,3 +32,5 @@
     dest: /etc/nginx/default.d/expense.conf
     notify:
     - restrart nginx
+    tags:
+    - deployement
