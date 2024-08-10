@@ -4,7 +4,7 @@
   tasks:
   - name: create insatnce
     amazon.aws.ec2_instance:
-      instance_type: t2 micro
+      instance_type: t2.micro
       name: "{{ item }}"
       security_group: for-ansible
       image_id: ami-090252cbe067a9e58
