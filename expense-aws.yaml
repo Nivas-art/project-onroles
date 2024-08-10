@@ -6,8 +6,8 @@
     amazon.aws.ec2_instance:
       instance_type: t2 micro
       name: "{{ item }}"
-      security_group: for ansible
-      image_id: ami-041e2ea9402c46c32
+      security_group: for-ansible
+      image_id: ami-090252cbe067a9e58
       key_name: 
       tags:
         Name: "{{ item }}"
