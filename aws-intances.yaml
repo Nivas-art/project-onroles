@@ -11,7 +11,7 @@
       key_name: 
       tags:
         Name: "{{ item }}"
-      loop:
-      - db1
-      - back
-      - front
+    loop:
+    - db1
+    - back
+    - front
