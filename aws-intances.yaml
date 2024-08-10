@@ -1,0 +1,17 @@
+- name: insatnces create
+  become: yes
+  hosts: localhost
+  tasks:
+  - name: create insatnce
+    amazon.aws.ec2_instance:
+      instance_type: t2 micro
+      name: "{{ item }}"
+      security_group: for ansible
+      image_id: ami-041e2ea9402c46c32
+      key_name: 
+      tags:
+        Name: "{{ item }}"
+      loop:
+      - db1
+      - back
+      - front

@@ -1,7 +1,0 @@
-- name: insatnces create
-  amazon.aws.ec2_instance:
-    instance_type: t2 micro
-    name: ansible
-    security_group: for ansible
-    image_id: ami-041e2ea9402c46c32
-    key_name: 
