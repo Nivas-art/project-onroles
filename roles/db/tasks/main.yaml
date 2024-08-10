@@ -9,7 +9,7 @@
     state: started
     enabled: yes
 
-- name: python depend
+- name: python dependdddddddd
   ansible.builtin.pip: # pip for insatll depedence for python
     name:
     - PyMySQL # install 
