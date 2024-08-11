@@ -1,5 +1,7 @@
 - name: print number
   hosts: localhost
+  vars:
+    number: 6
   become: yes
   tasks:
   - name: less or greater
