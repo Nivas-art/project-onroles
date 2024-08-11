@@ -16,9 +16,10 @@
   become: yes
   vars:
     tags:
-    - aws
-    - dev
-    - linux
+    - key: Application
+      value: payment
+    - key: Environment
+      value: dev
   tasks:
   - name: convert item2dict
     ansible.builtin.debug:
