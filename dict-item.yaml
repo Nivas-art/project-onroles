@@ -15,11 +15,11 @@
   hosts: localhost
   become: yes
   vars:
-    items:
+    tags:
     - aws
     - dev
     - linux
   tasks:
   - name: convert item2dict
     ansible.builtin.debug:
-      msg: "{{ items | item2dict }}"
+      msg: "{{ tags | items2dict }}"
