@@ -10,3 +10,16 @@
   - name: dict to item
     ansible.builtin.debug:
       msg: "{{ dict | dict2items }}"
+
+- name: item 2 dict
+  hosts: localhost
+  become: yes
+  vars:
+    item:
+    - aws
+    - dev
+    - linux
+  tasks:
+  - name: convert item2dict
+    ansible.builtin.debug:
+      msg: "{{item|items2dict}}"
