@@ -1,0 +1,12 @@
+- name: convert dict to item
+  hosts: localhost
+  become: yes
+  vars:
+    dict:
+      devop: 2
+      linux: 2
+      aws: 1
+  tasks:
+  - name: dict to item
+    ansible.builtin.debug:
+      msg: "{{ dict | dict2items }}"
