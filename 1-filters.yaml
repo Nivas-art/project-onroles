@@ -1,0 +1,8 @@
+- name: print number
+  hosts: localhost
+  become: yes
+  taks:
+  - name: less or greater
+    ansible.builtin.debug:
+      msg: "{{ number }} is less than 10"
+    when: number|int < 10
