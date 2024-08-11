@@ -1,7 +1,7 @@
 - name: print number
   hosts: localhost
   become: yes
-  taks:
+  tasks:
   - name: less or greater
     ansible.builtin.debug:
       msg: "{{ number }} is less than 10"
