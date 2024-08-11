@@ -22,4 +22,4 @@
   tasks:
   - name: convert item2dict
     ansible.builtin.debug:
-      msg: "{{ item|items2dict }}"
+      msg: "{{ item | item2dict }}"
