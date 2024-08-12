@@ -1,5 +1,5 @@
 - name: insatll mysql-server
-  hosts: db
+  hosts: web
   become: yes
   tasks:
   - name: install server
