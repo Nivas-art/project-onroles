@@ -1,0 +1,37 @@
+- name: insatll mysql-server
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: install server
+    ansible.builtin.dnf:
+      name: mysql-server
+      state: latest
+  - name: start and enabled
+    ansible.builtin.service:
+      name: mysqld
+      state: started
+      enabled: yes
+
+  - name: python depend
+    ansible.builtin.pip: # pip for insatll depedence for python
+      name:
+      - PyMySQL # install 
+      - cryptography # for pwd of dependcency
+      executable: pip3.9 # ansible python latest version dependence
+  
+  - name: check db pwd or not
+    community.mysql.mysql_info: # gather the mysql info
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: 172.31.94.37
+      filter: version # check the verison 
+    ignore_errors: yes
+    register: pwd_output
+  
+  - name: print output of pwd
+    ansible.builtin.debug:
+      msg: "output: {{pwd_output}}"
+
+  - name: pwd set
+    ansible.builtin.command: mysql_secure_installation --set-root-pass ExpenseApp@1
+    when: pwd_output.failed is true
