@@ -1,5 +1,5 @@
 - name: insatll mysql-server
-  hosts: localhost
+  hosts: db
   become: yes
   tasks:
   - name: install server
@@ -23,7 +23,7 @@
     community.mysql.mysql_info: # gather the mysql info
       login_user: root
       login_password: ExpenseApp@1
-      login_host: 172.31.94.37
+      login_host: 172.31.92.61
       filter: version # check the verison 
     ignore_errors: yes
     register: pwd_output
