@@ -1,2 +1,6 @@
-login_host: 172.31.42.20
+login_host: db.devops-srinu.online
 login_password: ExpenseApp@1
+login_user: root
+DB-HOST: db.devops-srinu.online
+app_location: /app
+component: backend
